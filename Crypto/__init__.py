@@ -20,7 +20,7 @@ class crypto:
     \nTop coins:
     -Name: {data['Name']};
     -Full Name: {data['FullName']};
-    -Info URL: {'https://www.cryptocompare.com'+data['Url']};
+    -Info URL: {'https://www.cryptocompare.com' + data['Url']};
     -Algorithm: {data['Algorithm']};
     -Rating:
         -Technology Adoption Rating: {data['Rating']['Weiss']['TechnologyAdoptionRating']};
@@ -31,10 +31,13 @@ class crypto:
     -MaxSupply: {data['MaxSupply']};"""
             response += text
 
-        response += f"\nTop Coins Are: {[r['Data'][x]['CoinInfo']['Name'] for x in range(0, int(self.limit))]}".replace('[', '').replace(']', '').replace('\'', '')
+        response += f"\nTop Coins Are: {[r['Data'][x]['CoinInfo']['Name'] for x in range(0, int(self.limit))]}".replace(
+            '[', '').replace(']', '').replace('\'', '')
         if self.low_info is True:
-            return f"\nTop Coins Are: {[r['Data'][x]['CoinInfo']['Name'] for x in range(0, int(self.limit))]}".replace('[', '').replace(']', '').replace('\'', '')
-        else: return response
+            return f"\nTop Coins Are: {[r['Data'][x]['CoinInfo']['Name'] for x in range(0, int(self.limit))]}".replace(
+                '[', '').replace(']', '').replace('\'', '')
+        else:
+            return response
 
     def price(self):
         """
