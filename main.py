@@ -4,7 +4,7 @@ import os
 from Crypto import crypto
 
 client = discord.Client()
-api_key = '9fce61b89dea5c79c074b135dd1b31c679f5e2019b5a2a7a1cbd5d5ebf1adba3'
+api_key = os.getenv('API_KEY')
 
 bot = commands.Bot(command_prefix='$')
 
